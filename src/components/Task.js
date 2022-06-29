@@ -1,12 +1,17 @@
+import { FaRegTimesCircle } from "react-icons/fa";
 
-const Task = ({task}) => {
+const Task = ({ task }) => {
   return (
     <div>
-        {
-            <p>{task.text}</p>
-        }
-    </div>
-  )
-}
 
-export default Task
+      <h3>
+        {task.text} <FaRegTimesCircle style={{color:"red", cursor:"pointer"}} />{" "}
+      </h3>
+
+      <p>{task.day}</p>
+
+    </div>
+  );
+};
+
+export default Task;
