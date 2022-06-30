@@ -15,7 +15,7 @@ const Header = ({ title, toggleShow, showAddTask }) => {
 
       <Button 
       handleClick={handleClick} 
-      color={showAddTask ?  "purple" : "red"} 
+      color={showAddTask ? "DarkKhaki" : "YellowGreen"} 
       text={showAddTask ? "Close Add Task Bar" : "Show Add Task Bar"}
       toggleShow={toggleShow}
       />

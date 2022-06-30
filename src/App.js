@@ -48,7 +48,7 @@ function App() {
       {
         showAddTask ? <AddTask addTask={addTask} /> : null
       }
-
+      <hr /><br />
       {tasks.length !== 0 ? (
         <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />
       ) : (
@@ -63,5 +63,5 @@ function App() {
 export default App;
 
 
-her taska sıra numarası ver
-alta tüm taskları sil butonu koy
+// her taska sıra numarası ver
+// alta tüm taskları sil butonu koy
