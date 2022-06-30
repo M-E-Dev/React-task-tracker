@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Button from "./Button";
 
-const Header = ({ title }) => {
+const Header = ({ title, toggleShow, showAddTask }) => {
     
     const handleClick = () => {
         
@@ -15,8 +15,9 @@ const Header = ({ title }) => {
 
       <Button 
       handleClick={handleClick} 
-      color="purple" 
-      text="Show Add Text Bar"
+      color={showAddTask ?  "purple" : "red"} 
+      text={showAddTask ? "Close Add Task Bar" : "Show Add Task Bar"}
+      toggleShow={toggleShow}
       />
 
     </div>
