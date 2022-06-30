@@ -4,6 +4,7 @@ import AddTask from './components/AddTask';
 import Header from './components/Header';
 import Tasks from './components/Tasks';
 
+// useId ???
 // iconları kullanmak için --- npm install react-icons --save
 
 function App() {
@@ -11,29 +12,32 @@ function App() {
   const [tasks, setTasks] = useState([
     {
       id: 1,
-      text: 'Finish React Project',
-      day: 'Feb 5th at 2:30pm',
+      text: 'Add A Task',
+      day: 'Now...',
       isDone: false,
-    },
-    {
-      id: 2,
-      text: 'Feed the Cat',
-      day: 'Feb 6th at 1:30pm',
-      isDone: false,
-    },
-    {
-      id: 3,
-      text: 'Attend Meeting',
-      day: 'Feb 7th at 20:00pm',
-      isDone: false,
-    },
+    }
   ]);
+
+  const deleteTask = (deletedTaskId) => {
+    setTasks(tasks.filter((task) => task.id !== deletedTaskId))
+  }
+
+  const addTask = (newTask) => {
+    const id = Math.floor(Math.random() * 1000 +1);
+    const addNewTask = {id, ...newTask}
+    setTasks([...tasks, addNewTask])
+  }
+
+  const toggleDone = (toggleDoneId) => {
+    setTasks(tasks.map((task) => task.id === toggleDoneId ? { ...task, isDone: !task.isDone } : task))
+  }
 
   return (
     <div className="App">
 
     <Header title="Task Tracker" />
-    <Tasks tasks={tasks} />
+    <AddTask addTask={addTask} />
+    <Tasks tasks={tasks} deleteTask={deleteTask} toggleDone={toggleDone} />
     {/* <AddTask  /> */}
 
     </div>
