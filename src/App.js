@@ -1,3 +1,5 @@
+// --------------------------her taska sıra numarası ver-------------------------------------
+// -------------------------alta tüm taskları sil butonu koy-------------------------------
 import { useState } from "react";
 import { version } from "react-dom";
 import "./App.css";
@@ -63,5 +65,3 @@ function App() {
 export default App;
 
 
-// her taska sıra numarası ver
-// alta tüm taskları sil butonu koy
